@@ -1,0 +1,63 @@
+.note-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  cursor: pointer;
+  width: calc(33% - 5px);
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
+
+    .header {
+      display: flex;
+      align-items: center;
+
+      .title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 10px;
+        flex: 1;
+      }
+
+      .progress {
+        height: 24px !important;
+        width: 24px !important;
+      }
+    }
+
+    .text {
+      display: flex;
+      min-height: 75px;
+      max-height: 75px;
+      padding: 10px;
+      margin-top: 10px;
+      overflow: hidden;
+      border-top: 1px solid lightgray;
+    }
+
+    .tags-wrap {
+      display: grid;
+
+      .tags {
+        display: flex;
+        min-height: 40px;
+        max-height: 40px;
+        border-top: 1px solid lightgray;
+        padding: 10px;
+        gap: 10px;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .note-wrap {
+    width: calc(50% - 5px);
+  }
+}

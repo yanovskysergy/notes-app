@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: 100%;
+
+  .short-info {
+    height: 100%;
+    width: 340px;
+    padding: 10px;
+  }
+
+  .text-wrapper {
+    padding: 10px 10px 10px 0;
+    flex-grow: 1;
+  }
+}

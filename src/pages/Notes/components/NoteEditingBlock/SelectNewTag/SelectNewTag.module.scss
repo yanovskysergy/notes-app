@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  border: 1px solid #1976d2;
+  background-color: white;
+  width: 250px;
+  max-height: 150px;
+  transition: all 0.3s;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow: auto;
+    padding: 10px;
+    overflow: auto;
+    flex-grow: 1;
+  }
+}
