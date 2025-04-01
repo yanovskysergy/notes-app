@@ -1,4 +1,3 @@
-import { FC } from "react";
 import styles from "./Header.module.scss";
 
 interface HeaderProps {
@@ -6,7 +5,7 @@ interface HeaderProps {
   headerLeft?: JSX.Element;
 }
 
-export const Header: FC<HeaderProps> = ({ headerLeft, headerRight }) => {
+export const Header = ({ headerLeft, headerRight }: HeaderProps) => {
   return (
     <header className={styles.header}>
       <div>{headerLeft}</div>

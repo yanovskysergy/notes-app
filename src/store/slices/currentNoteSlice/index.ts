@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { getTagNameByIndex, parseTags } from "@/shared/helpers/tags.helpers";
+import { getTagNameByIndex, parseTags } from "@/shared/utils/tags";
 
 type TagsHelperPopup = {
   position: {

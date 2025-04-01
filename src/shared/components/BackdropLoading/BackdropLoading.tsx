@@ -1,11 +1,10 @@
-import { FC } from "react";
 import { Backdrop, CircularProgress } from "@mui/material";
 
 interface BackdropLoadingProps {
   open: boolean;
 }
 
-export const BackdropLoading: FC<BackdropLoadingProps> = ({ open }) => {
+export const BackdropLoading = ({ open }: BackdropLoadingProps) => {
   return (
     <Backdrop open={open}>
       <CircularProgress />

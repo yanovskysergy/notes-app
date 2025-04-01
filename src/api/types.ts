@@ -1,20 +1,28 @@
+import { EndpointBuilder } from "@reduxjs/toolkit/dist/query/endpointDefinitions";
+import {
+  BaseQueryFn,
+  FetchArgs,
+  FetchBaseQueryError,
+  FetchBaseQueryMeta,
+} from "@reduxjs/toolkit/query";
+
 export type IDType = string;
 
-export interface TagApiType {
-  id: IDType;
-  createdAt: string;
-  tagName: string;
-  noteIds: string[];
+export enum CacheTagEnum {
+  Note = "NOTE",
+  Tag = "TAG",
 }
 
-export interface NoteApiType {
-  id: IDType;
-  createdAt: string;
-  title: string;
-  text: string;
-  tagIds: string[];
-}
+export type StoreApiPathType = "api";
 
-export interface NoteType extends Omit<NoteApiType, "tagIds"> {
-  tags: TagApiType[];
-}
+export type ApiBuilderType = EndpointBuilder<
+  BaseQueryFn<
+    string | FetchArgs,
+    unknown,
+    FetchBaseQueryError,
+    object,
+    FetchBaseQueryMeta
+  >,
+  CacheTagEnum,
+  StoreApiPathType
+>;

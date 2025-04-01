@@ -1,10 +1,8 @@
-// middlewares
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { api } from "@/api";
-import currentNoteReducer from "@/store/slices/currentNoteSlice";
-import currentNoteMiddleware from "@/store/slices/currentNoteSlice/middlewares";
+import { api } from "@/api/rootApi";
 // reducers
+import currentNoteReducer from "@/store/slices/currentNoteSlice";
 import filterNotesReducer from "@/store/slices/filterNotesSlice";
 
 export const store = configureStore({
@@ -14,7 +12,7 @@ export const store = configureStore({
     currentNote: currentNoteReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(api.middleware, currentNoteMiddleware),
+    getDefaultMiddleware().concat(api.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
